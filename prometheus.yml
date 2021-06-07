@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 5s
+  external_labels:
+    monitor: 'Monitoring'
+scrape_configs:
+  - job_name: 'prometheus' 
+    static_configs: 
+      - targets: ['192.168.1.85:9090']
+  - job_name: 'node-exporter' 
+    static_configs: 
+      - targets: ['192.168.1.85:9100']
+  - job_name: 'cAdvisor' 
+    static_configs:
+      - targets: ['192.168.1.85:8080']
+  - job_name: 'wmiexporter'  
+    static_configs: 
+     - targets: ['192.168.1.86:9182', '10.2.0.75:9182' , '10.2.0.22:9182' , '10.2.0.50:9182' , '10.2.0.11:9182' , '10.2.0.122:9182' , '10.2.0.134:9182' , '10.2.0.123:9182' , '10.2.0.133:9182' , '108.10.10.10:9182' , '108.10.10.80:9182' , '108.10.10.80:9182' , '108.10.10.102:9182' , '108.10.10.101:9182' , '10.2.0.121:9182' , '10.2.0.120:9182' , '10.2.0.61:9182' , '10.2.0.60:9182']
+  - job_name: 'snmp'
+    static_configs:
+      - targets: ['192.168.1.85:9116']
+
